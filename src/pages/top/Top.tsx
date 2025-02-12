@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
+// import { open } from "@tauri-apps/plugin-dialog";
 
 const Top = () => {
 	const [greetMsg, setGreetMsg] = useState("");
@@ -10,21 +11,16 @@ const Top = () => {
 		setGreetMsg(await invoke("greet", { name }));
 	}
 
-	function commandWithMessage() {
-		invoke("command_with_message", { message: "message" }).then((res) => {
-			console.log(res);
-		});
+	async function runScript() {
+		let script_path =
+			"D:\\05_scripts\\00main\\04desktopAppDEV\\99prototype\\01powershell_proto\\01_完全にlocalからillusratorを立ち上げてスクリプトを実行する仕組み\\test.ps1";
+		await invoke("run_script", { script_path });
 	}
-	function executeCommands() {
-		invoke("simple_command");
-		invoke("command_with_object", { message: { field_str: "some message", field_u32: 12 } }).then((message) => {
-			console.log("command_with_object", message);
-		});
-	}
+
 	return (
 		<>
 			<main className="m-0 pt-10 flex flex-col items-center justify-center">
-				<p className="text-lg p-4">Welcome to Tauri React</p>
+				<h1>指定した場所のスクリプトを実行するスクリプト。</h1>
 				<form
 					className="greet-form"
 					onSubmit={(e) => {
@@ -39,11 +35,8 @@ const Top = () => {
 				</form>
 				<p>{greetMsg}</p>
 				<div className="p-4">
-					<button className="btn" onClick={executeCommands}>
-						Click to execute command
-					</button>
-					<button className="btn" onClick={commandWithMessage}>
-						Send Message
+					<button className="btn" onClick={runScript}>
+						Click to open dialog
 					</button>
 				</div>
 			</main>
