@@ -10,8 +10,17 @@ const Top = () => {
 		// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 		setGreetMsg(await invoke("greet", { name }));
 	}
+
+	function commandWithMessage() {
+		invoke("command_with_message", { message: "message" }).then((res) => {
+			console.log(res);
+		});
+	}
 	function executeCommands() {
 		invoke("simple_command");
+		invoke("command_with_object", { message: { field_str: "some message", field_u32: 12 } }).then((message) => {
+			console.log("command_with_object", message);
+		});
 	}
 	return (
 		<>
@@ -34,6 +43,9 @@ const Top = () => {
 				<div className="p-4">
 					<button className="btn" onClick={executeCommands}>
 						Click to execute command
+					</button>
+					<button className="btn" onClick={commandWithMessage}>
+						Send Message
 					</button>
 				</div>
 			</main>
