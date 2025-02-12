@@ -11,8 +11,7 @@ fn greet(name: &str) -> String {
 
 // execute powershell script
 #[tauri::command]
-fn run_script() -> Result<String, String> {
-    let script_path = "D:\\05_scripts\\00main\\04desktopAppDEV\\99prototype\\01powershell_proto\\01_完全にlocalからillusratorを立ち上げてスクリプトを実行する仕組み\\test.ps1";
+fn run_script(script_path: &str) -> Result<String, String> {
     let output = Command::new("powershell")
         .arg("-File")
         .arg(script_path)

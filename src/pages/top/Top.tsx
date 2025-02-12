@@ -12,9 +12,9 @@ const Top = () => {
 	}
 
 	async function runScript() {
-		let script_path =
+		let scriptPath =
 			"D:\\05_scripts\\00main\\04desktopAppDEV\\99prototype\\01powershell_proto\\01_完全にlocalからillusratorを立ち上げてスクリプトを実行する仕組み\\test.ps1";
-		await invoke("run_script", { script_path });
+		await invoke("run_script", { scriptPath });
 	}
 
 	return (
