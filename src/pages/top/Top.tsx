@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import Headder from "./components/Headder";
 
 const Top = () => {
 	const [greetMsg, setGreetMsg] = useState("");
@@ -24,7 +23,6 @@ const Top = () => {
 	}
 	return (
 		<>
-			<Headder />
 			<main className="m-0 pt-10 flex flex-col items-center justify-center">
 				<p className="text-lg p-4">Welcome to Tauri React</p>
 				<form
