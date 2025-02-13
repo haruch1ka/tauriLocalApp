@@ -1,6 +1,6 @@
-# boiler tauri
+# tauri win app
 
-tauri の boiler template
+The Adobe script execution app for Windows ,made by Tauri.
 
 ## Recommended IDE Setup
 
