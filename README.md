@@ -1,6 +1,6 @@
 # tauri win app
 
-The Adobe script execution app for Windows ,made by Tauri.
+The Adobe script execution app for Windows , using Tauri.
 
 ## Recommended IDE Setup
 
