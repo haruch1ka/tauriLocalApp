@@ -29,7 +29,7 @@ export default {
 				3: "0.1875rem",
 			},
 			animation: {
-				"scale-up-ver-center": "scale-up-ver-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) 2s 3 both",
+				"scale-up-v	r-center": "scale-up-ver-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) 2s 3 both",
 			},
 			keyframes: {
 				"scale-up-ver-center": {
@@ -38,6 +38,22 @@ export default {
 					},
 					to: {
 						transform: "scaleY(1)",
+					},
+				},
+				"slide-in": {
+					from: {
+						transform: "translateX(-100%)",
+					},
+					to: {
+						transform: "translateX(0)",
+					},
+				},
+				"slide-out": {
+					from: {
+						transform: "translateX(0)",
+					},
+					to: {
+						transform: "translateX(-100%)",
 					},
 				},
 			},
