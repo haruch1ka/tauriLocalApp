@@ -12,7 +12,7 @@
 	"app": {
 		"windows": [
 			{
-				"title": "taihoWindowsApp",
+				"title": "WindowsScriptApp",
 				"width": 800,
 				"height": 600
 			}
